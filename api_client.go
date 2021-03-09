@@ -75,8 +75,7 @@ type APIClient struct {
 	ContainerClustersApi            *ManagementPlaneApiFabricContainerClustersApiService
 	ContainerInventoryApi           *ManagementPlaneApiFabricContainerInventoryApiService
 	ContainerProjectsApi            *ManagementPlaneApiFabricContainerProjectsApiService
-	AntreaNodesApi                  *AntreaNodesPolicyApiService
-       
+        ClusterControlPlaneApi          *SystemAdministrationPolicyClusterControlPlaneApiService
 }
 
 type service struct {
@@ -280,7 +279,7 @@ func NewAPIClient(cfg *Configuration) (*APIClient, error) {
 	c.ContainerClustersApi = (*ManagementPlaneApiFabricContainerClustersApiService)(&c.common)
 	c.ContainerInventoryApi = (*ManagementPlaneApiFabricContainerInventoryApiService)(&c.common)
 	c.ContainerProjectsApi = (*ManagementPlaneApiFabricContainerProjectsApiService)(&c.common)
-	c.AntreaNodesApi = (*AntreaNodesPolicyApiService)(&c.common)
+	c.ClusterControlPlaneApi = (*SystemAdministrationPolicyClusterControlPlaneApiService)(&c.common)
 	return c, nil
 }
 
@@ -517,6 +516,7 @@ func (c *APIClient) prepareRequest(
 
 	// Generate a new request
 	if body != nil {
+		log.Printf("[DEBUG] the request to nsx-t to register method: %s, url: %s, body: %s", method, url.String(), body)
 		localVarRequest, err = http.NewRequest(method, url.String(), body)
 	} else {
 		localVarRequest, err = http.NewRequest(method, url.String(), nil)
@@ -562,11 +562,14 @@ func (c *APIClient) prepareRequest(
 		// Basic HTTP Authentication
 		if auth, ok := ctx.Value(ContextBasicAuth).(BasicAuth); ok {
 			localVarRequest.SetBasicAuth(auth.UserName, auth.Password)
+			log.Printf("[DEBUG] basic auth: %s - %s", auth.UserName, auth.Password)
 		}
 
 		// AccessToken Authentication
 		if auth, ok := ctx.Value(ContextAccessToken).(string); ok {
 			localVarRequest.Header.Add("Authorization", "Bearer "+auth)
+			log.Printf("[DEBUG] access token: %s", auth)
+			// sleep a random increasing time
 		}
 	}
 
@@ -574,6 +577,7 @@ func (c *APIClient) prepareRequest(
 		localVarRequest.Header.Add(header, value)
 	}
 
+	log.Printf("[DEBUG] localVarRequest: %v", localVarRequest)
 	return localVarRequest, nil
 }
 
