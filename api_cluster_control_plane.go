@@ -104,72 +104,13 @@ func (a *SystemAdministrationPolicyClusterControlPlaneApiService) CreateOrUpdate
 			error: localVarHttpResponse.Status,
 		}
 
-		if localVarHttpResponse.StatusCode == 201 {
-			var v clustercontrolplane.ClusterControlPlane
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
+		var v ApiError
+		err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-
-		if localVarHttpResponse.StatusCode == 400 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 403 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 412 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 500 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 503 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
+		newErr.model = v
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
@@ -243,61 +184,13 @@ func (a *SystemAdministrationPolicyClusterControlPlaneApiService) DeleteClusterC
 			error: localVarHttpResponse.Status,
 		}
 
-		if localVarHttpResponse.StatusCode == 400 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHttpResponse, newErr
-			}
-			newErr.model = v
+		var v ApiError
+		err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
 			return localVarHttpResponse, newErr
 		}
-
-		if localVarHttpResponse.StatusCode == 403 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 412 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 500 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 503 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarHttpResponse, newErr
-		}
-
+		newErr.model = v
 		return localVarHttpResponse, newErr
 	}
 
@@ -378,72 +271,13 @@ func (a *SystemAdministrationPolicyClusterControlPlaneApiService) GetClusterCont
 			error: localVarHttpResponse.Status,
 		}
 
-		if localVarHttpResponse.StatusCode == 200 {
-			var v clustercontrolplane.ClusterControlPlane
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
+		var v ApiError
+		err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-
-		if localVarHttpResponse.StatusCode == 400 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 403 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 412 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 500 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 503 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
+		newErr.model = v
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
@@ -522,83 +356,13 @@ func (a *SystemAdministrationPolicyClusterControlPlaneApiService) ListClusterCon
 			error: localVarHttpResponse.Status,
 		}
 
-		if localVarHttpResponse.StatusCode == 200 {
-			var v clustercontrolplane.ClusterControlPlaneListResult
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
+		var v ApiError
+		err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-
-		if localVarHttpResponse.StatusCode == 400 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 403 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 404 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 412 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 500 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 503 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
+		newErr.model = v
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
@@ -681,73 +445,13 @@ func (a *SystemAdministrationPolicyClusterControlPlaneApiService) PatchClusterCo
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
-
-		if localVarHttpResponse.StatusCode == 200 {
-			var v clustercontrolplane.ClusterControlPlane
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
+		var v ApiError
+		err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-
-		if localVarHttpResponse.StatusCode == 400 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 403 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 412 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 500 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
-		if localVarHttpResponse.StatusCode == 503 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-
+		newErr.model = v
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
